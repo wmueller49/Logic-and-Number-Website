@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Number Conversions</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js"></script>
+	</head>
+
+	<!--Mrs. Kelly wants a website for
+		number conversions,
+		truth tables,
+		basic numbers (binary, hex)
+	-->
+
+	<body>
+		<h1>Number conversions</h1>
+
+
+		<p style="font-weight: bold">Number:</p>
+		<p id="numSlot">0000</p>
+
+		<button onclick="generateBinNum()">Generate Binary Number</button>
+
+		<button onclick="generateHexNum()">Generate Hex Number</button>
+
+		<button onclick="generate10Num()">Generate Base 10 Number</button>
+
+		<br><br>
+
+		<p style="font-weight: bold">Check answer in base 10:</p>
+		<button onclick="checkAnswer10()">Check Answer</button>
+		<input type="text" id="conversionInput10">
+		<p id="solutionSlot10"></p>
+
+		<br><br>
+		<p style="font-weight: bold">Check answer in hex:</p>
+		<button onclick="checkAnswerHex()">Check Answer</button>
+		<input type="text" id="conversionInputHex">
+		<p id="solutionSlotHex"></p>
+
+		<br><br>
+		<p style="font-weight: bold">Check answer in binary:</p>
+		<button onclick="checkAnswerBinary()">Check Answer</button>
+		<input type="text" id="conversionInputBinary">
+		<p id="solutionSlotBinary"></p>
+
+	</body>
+</html>
