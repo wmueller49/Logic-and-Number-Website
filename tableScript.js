@@ -4,12 +4,6 @@ var q = [true, false, true, false];
 var table = [];
 var stringTable = [];
 
-function run(){
-	console.log("This is p: " + solveNotTable(p));
-	console.log("This is q: " + solveNotTable(q));
-	console.log(solveTable(solveNotTable(p), solveNotTable(q), "&&"));
-}
-
 function checkAnswer(i){
 	breakString();
 	var input1 = document.getElementById("test1");
@@ -268,5 +262,4 @@ function breakString(){
 	}
 
 	table = createTable(0);
-	console.log(table);
 }
