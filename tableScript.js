@@ -4,10 +4,59 @@ var q = [true, false, true, false];
 var table = [];
 var stringTable = [];
 
-function run(){
-	console.log(!(p[1]));
-	console.log(!p);
-	solveNotTable(p, "!");
+function checkAnswer(i){
+	breakString();
+	var input1 = document.getElementById("test1");
+	var boolValue1 = input1.value.toLowerCase() == 'true' ? true : false;
+
+	var input2 = document.getElementById("test2");
+	var boolValue2 = input2.value.toLowerCase() == 'true' ? true : false;
+
+	var input3 = document.getElementById("test3");
+	var boolValue3 = input3.value.toLowerCase() == 'true' ? true : false;
+
+	var input4 = document.getElementById("test4");
+	var boolValue4 = input4.value.toLowerCase() == 'true' ? true : false;
+
+
+	if(i == 0 && input1 && input1.value != ''){
+		if(boolValue1 == table[i] && (input1.value == "false" || input1.value=="true")){
+			document.getElementById("solutionSlot1").innerHTML = "Correct! Good job!";
+		}
+		else{
+			document.getElementById("solutionSlot1").innerHTML = "Incorrect, try again.";
+		}
+	}
+
+	else if(i == 1 && input2 && input2.value != ''){
+		if(boolValue2 == table[i] && (input2.value == "false" || input2.value=="true")){
+			document.getElementById("solutionSlot2").innerHTML = "Correct! Good job!";
+		}
+		else{
+			document.getElementById("solutionSlot2").innerHTML = "Incorrect, try again.";
+		}
+	}
+
+	else if(i == 2 && input3 && input3.value != ''){
+		if(boolValue3 == table[i] && (input3.value == "false" || input3.value=="true")){
+			document.getElementById("solutionSlot3").innerHTML = "Correct! Good job!";
+		}
+		else{
+			document.getElementById("solutionSlot3").innerHTML = "Incorrect, try again.";
+		}
+	}
+
+	else if(i == 3 && input4 && input4.value != ''){
+		if(boolValue4 == table[i] && (input4.value == "false" || input4.value=="true")){
+			document.getElementById("solutionSlot4").innerHTML = "Correct! Good job!";
+		}
+		else{
+			document.getElementById("solutionSlot4").innerHTML = "Incorrect, try again.";
+		}
+	}
+	else{
+
+	}
 }
 
 function createTable(count){
@@ -18,15 +67,15 @@ function createTable(count){
 	}
 
 	else if(stringTable[Number(count)] == "!"){
-		return (solveNotTable(createTable(Number(count) + Number(1)), "!"));
+		return (solveNotTable(createTable(Number(count) + Number(1))));
 	}
 
-	else if((stringTable[Number(count)] == "(") && (stringTable[Number(count) + Number(1)]) == "("){
+	else if((stringTable[Number(count)] == "(") && (stringTable[Number(count) + Number(1)]) == "("){//this
 		return createTable(Number(count) + Number(1));
 	}
 
 	else if(stringTable[count] == "(" && stringTable[Number(count) + Number(1)] == "!"){ 
-		return(solveNotTable(createTable(Number(count) + Number(2)), "!"));
+		return(solveNotTable(createTable(Number(count) + Number(2))));
 	}
 
 	else if(stringTable[Number(count)] == "("){
@@ -34,6 +83,14 @@ function createTable(count){
 		var table2 = stringTable[Number(count) + Number(3)];
 		var comparison = stringTable[Number(count) + Number(2)];
 		var next;
+
+		if(table2 == "("){
+			return solveTable(table1, createTable(Number(count) + Number(3)), comparison);
+		}
+
+		if(table2 == "!"){
+			return solveTable(table1, createTable(Number(count) + Number(3)),comparison)
+		}
 
 		if(Number(count) + Number(4) < stringTable.length){
 			if(stringTable[Number(count) + Number(4)] == ")"){
@@ -99,21 +156,33 @@ function createTable(count){
 }
 
 
-function solveTable(a, b, comp){
-	var t = []
-	for(var i = 0; i < p.length; i++){
+function solveTable(one, two, comp){
+	if(one == "p"){
+		one = p;
+	}
+
+	else if(one == "q"){
+		one = q;
+	}
+
+	var t = [];
+	for(var i = 0; i < 4; i++){
 		if(comp === "&&"){
-			t.push((p[i] && q[i]));
+			t.push((one[i] && two[i]));
 		}
 		else if(comp === "||"){
-			t.push((p[i] || q[i]));
+			t.push((one[i] || two[i]));
 		}
 	}
 	return t;
 }
 
-function solveNotTable(a, not){
-	
+function solveNotTable(a){
+	var t = [];
+	for(var i = 0; i < 4; i++){
+		t.push(!a[i]);
+	}
+	return t;
 }
 
 function breakString(){
@@ -152,5 +221,5 @@ function breakString(){
 
 	}
 
-	console.log(createTable(0));
+	table = createTable(0);
 }
