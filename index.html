@@ -16,11 +16,20 @@
 
 		<button onclick="generateHexNum()">Generate Hex Number</button>
 
-		<button onclick="generate10Num()">Generate Base 10 Number</button>
+		<button onclick="generate10Num()">Generate Decimal Number</button>
+
+		<p>
+			Create upper bound (default 256)
+			<input id="upperBound">
+		</p>
+		<p>
+			Create lower bound (default 0)
+			<input id="lowerBound">
+		</p>
 
 		<br><br>
 
-		<p style="font-weight: bold">Check answer in base 10:</p>
+		<p style="font-weight: bold">Check answer in decimal:</p>
 		<button onclick="checkAnswer10()">Check Answer</button>
 		<input type="text" id="conversionInput10">
 		<p id="solutionSlot10"></p>

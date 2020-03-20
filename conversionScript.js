@@ -1,27 +1,77 @@
 var index = 0;
-
-var binaryNums = ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111"];
-var hexNums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+var upperBound = 256;
+var lowerBound = 0;
 
 function generateBinNum(){
-	index = Math.floor(Math.random() * 15);
-	document.getElementById("numSlot").innerHTML = (binaryNums[index]);
+	if(document.getElementById("upperBound") && document.getElementById("upperBound").value != ''){
+		upperBound = document.getElementById("upperBound").value;
+	}
+	else{
+		upperBound = 256;
+	}
+
+	if(document.getElementById("lowerBound") && document.getElementById("lowerBound").value != ''){
+		lowerBound = document.getElementById("lowerBound").value;
+	}
+	else{
+		lowerBound = 0;
+	}
+
+	index = Math.floor(Math.random() * upperBound + lowerBound);
+
+	document.getElementById("numSlot").innerHTML = (index >>> 0).toString(2);
 	document.getElementById("solutionSlot10").innerHTML = "";
 	document.getElementById("solutionSlotHex").innerHTML = "";
 	document.getElementById("solutionSlotBinary").innerHTML = "";
 }
 
 function generateHexNum(){
-	index = Math.floor(Math.random() * 15);
-	document.getElementById("numSlot").innerHTML = (hexNums[index]);
+	if(document.getElementById("upperBound") && document.getElementById("upperBound").value != ''){
+		upperBound = document.getElementById("upperBound").value;
+	}
+	else{
+		upperBound = 256;
+	}
+
+
+	if(document.getElementById("lowerBound") && document.getElementById("lowerBound").value != ''){
+		lowerBound = document.getElementById("lowerBound").value;
+	}
+	else{
+		lowerBound = 0;
+	}
+	
+
+	index = Math.floor(Math.random() * upperBound + lowerBound);
+
+	document.getElementById("numSlot").innerHTML = (hexString = index.toString(16));
+
 	document.getElementById("solutionSlot10").innerHTML = "";
 	document.getElementById("solutionSlotHex").innerHTML = "";
 	document.getElementById("solutionSlotBinary").innerHTML = "";
 }
 
 function generate10Num(){
-	index = Math.floor(Math.random() * 15);
+	if(document.getElementById("upperBound") && document.getElementById("upperBound").value != ''){
+		upperBound = document.getElementById("upperBound").value;
+	}
+	else{
+		upperBound = 256;
+	}
+
+
+	if(document.getElementById("lowerBound") && document.getElementById("lowerBound").value != ''){
+		lowerBound = document.getElementById("lowerBound").value;
+	}
+	else{
+		lowerBound = 0;
+	}
+	
+
+	index = Math.floor(Math.random() * upperBound + lowerBound);
+
 	document.getElementById("numSlot").innerHTML = index;
+
 	document.getElementById("solutionSlot10").innerHTML = "";
 	document.getElementById("solutionSlotHex").innerHTML = "";
 	document.getElementById("solutionSlotBinary").innerHTML = "";
@@ -44,7 +94,7 @@ function checkAnswer10(){
 function checkAnswerHex(){
 	var input = document.getElementById("conversionInputHex");
 
-	if(input && input.value != '' && input.value == hexNums[index]){
+	if(input && input.value != '' && parseInt(input.value, 16) == index){
 		document.getElementById("solutionSlotHex").innerHTML = "Correct! Good job!";
 	}
 	else{
@@ -56,7 +106,7 @@ function checkAnswerHex(){
 function checkAnswerBinary(){
 	var input = document.getElementById("conversionInputBinary");
 
-	if(input && input.value != '' && input.value == binaryNums[index]){
+	if(input && input.value != '' && parseInt(input.value, 2) == index){
 		document.getElementById("solutionSlotBinary").innerHTML = "Correct! Good job!";
 	}
 	else{
