@@ -4,6 +4,12 @@ var q = [true, false, true, false];
 var table = [];
 var stringTable = [];
 
+function run(){
+	console.log("This is p: " + solveNotTable(p));
+	console.log("This is q: " + solveNotTable(q));
+	console.log(solveTable(solveNotTable(p), solveNotTable(q), "&&"));
+}
+
 function checkAnswer(i){
 	breakString();
 	var input1 = document.getElementById("test1");
@@ -66,8 +72,34 @@ function createTable(count){
 		return null;
 	}
 
-	else if(stringTable[Number(count)] == "!"){
+	else if(stringTable[Number(count)] == "!" && stringTable[Number(count) + Number(1)] == "("){
 		return (solveNotTable(createTable(Number(count) + Number(1))));
+	}
+
+	else if(stringTable[Number(count)] == "!"){
+
+		if(stringTable[Number(count) + Number(3)] == "("){
+			return solveTable(solveNotTable(stringTable[Number(count) + Number(1)]), createTable(Number(count) + Number(3)), stringTable[Number(count) + Number(2)]);
+		}
+
+		else if(stringTable[Number(count) + Number(3)] == "!" && stringTable[Number(count) + Number(4)] == "("){
+			return solveTable(solveNotTable(stringTable[Number(count) + Number(1)]), solveNotTable(createTable(Number(count) + Number(4))), stringTable[Number(count) + Number(2)]);
+		}
+
+		else if(stringTable[Number(count) + Number(3)] == "!"){
+			if(stringTable[Number(count) + Number(2)] == "&&"){
+				return solveTable(solveNotTable(stringTable[Number(count) + Number(1)]), solveNotTable(stringTable[Number(count) + Number(4)]), "&&");
+			}
+			else if(stringTable[Number(count) + Number(2)] == "||"){
+				return solveTable(solveNotTable(stringTable[Number(count) + Number(1)]), solveNotTable(stringTable[Number(count) + Number(4)]), "||");
+			}
+		}
+
+		else{
+			return solveTable(solveNotTable(stringTable[Number(count) + Number(1)]), stringTable[Number(count) + Number(3)], stringTable[Number(count) + Number(2)]);
+		}
+
+		return solveTable(solveNotTable(stringTable[Number(count) + Number(1)]), createTable(Number(count) + Number(3)), stringTable[Number(count) + Number(2)]);
 	}
 
 	else if((stringTable[Number(count)] == "(") && (stringTable[Number(count) + Number(1)]) == "("){//this
@@ -75,7 +107,7 @@ function createTable(count){
 	}
 
 	else if(stringTable[count] == "(" && stringTable[Number(count) + Number(1)] == "!"){ 
-		return(solveNotTable(createTable(Number(count) + Number(2))));
+		return(createTable(Number(count) + Number(1)));
 	}
 
 	else if(stringTable[Number(count)] == "("){
@@ -165,6 +197,13 @@ function solveTable(one, two, comp){
 		one = q;
 	}
 
+	if(two == "p"){
+		two = p;
+	}
+	else if(two == "q"){
+		two = q;
+	}
+
 	var t = [];
 	for(var i = 0; i < 4; i++){
 		if(comp === "&&"){
@@ -178,6 +217,13 @@ function solveTable(one, two, comp){
 }
 
 function solveNotTable(a){
+	if(a == "p"){
+		a = p;
+	}
+	else if(a == "q"){
+		a = q;
+	}
+
 	var t = [];
 	for(var i = 0; i < 4; i++){
 		t.push(!a[i]);
@@ -222,4 +268,5 @@ function breakString(){
 	}
 
 	table = createTable(0);
+	console.log(table);
 }
