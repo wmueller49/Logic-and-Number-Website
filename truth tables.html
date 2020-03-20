@@ -3,25 +3,24 @@
 	<head>
 		<title>Truth Tables</title>
 		<link rel="stylesheet" href="style.css">
-		<script src="script.js"></script>
+		<script src="tableScript.js"></script>
 	</head>
 
 	<body>
 		<h1>Truth Tables</h1>
 		<p style="font-weight: bold">p: T T F F | q: T F T F</p>
 
+		<p>To generate a table, type in the table you want created</p>
+		<p>You can use p, q, !, &&, and ||</p>
+
+		<input type="text" id="tableText">
+
 		<p style="font-weight: bold">P and Q</p>
-		<input type="text" id="test1"> 
-		<button>Check Answer</button>
-		<br><br>
-		<input type="text" id="test2">
-		<button>Check Answer</button>
-		<br><br>
-		<input type="text" id="test3">
-		<button>Check Answer</button>
-		<br><br>
-		<input type="text" id="test4">
-		<button>Check Answer</button>
+		<p>
+			p[0] && q[0]
+			<input type="text" id="test1">
+			<button onclick="run()">Check Answer</button>
+		</p>
 
 	</body>
 
