@@ -15,8 +15,21 @@
 
 		<p id="question"></p>
 		<br><br>
-		<input id="answer" onload="">
-		<button onclick="isCorrect()">Check</button>
+		<input id="answer">
+
+		<script>
+			var answerInput = document.getElementById("answer");
+			if(answerInput){
+				answerInput.addEventListener("keyup", function(event){
+					if(event.keyCode === 13){
+						event.preventDefault();
+						document.getElementById("checkButton").click();
+					}
+				});
+			}
+		</script>
+
+		<button id="checkButton" onclick="isCorrect()">Check</button>
 		<p id="solutionSlot"></p>
 
 		<a href="index.html">Link to number conversions</a>
