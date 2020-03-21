@@ -1,53 +1,36 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>Number Conversions</title>
-		<link rel="stylesheet" href="style.css">
-		<script src="conversionScript.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="img/icon.png">
+		<title>Logic and Numbers</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link href="style.css" rel="stylesheet">
 	</head>
 
 	<body>
-		<h1>Number conversions</h1>
+		<!--Images-->
+		<div id="slides" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="img/background.gif">
+					<div class="carousel-caption">
+						<h1 class="display-2">Logic and Numbers</h1>
+						<h3>Practice Website</h3>
+						<button onclick="window.location.href = 'numberConversions.html';" type="button" class="btn btn-outline-light btn-lg">Number Conversions</button>
+						<br><br>
+						<button onclick="window.location.href = 'truthTables.html';" type="button" class="btn btn-outline-light btn-lg">Truth Tables</button>
+						<br><br>
+						<button onclick="window.location.href = 'speedTest.html';" type="button" class="btn btn-outline-light btn-lg">Test</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-		<p style="font-weight: bold">Number:</p>
-		<p id="numSlot">0000</p>
-
-		<button onclick="generateBinNum()">Generate Binary Number</button>
-
-		<button onclick="generateHexNum()">Generate Hex Number</button>
-
-		<button onclick="generate10Num()">Generate Decimal Number</button>
-
-		<p>
-			Create upper bound (default 256)
-			<input id="upperBound">
-		</p>
-		<p>
-			Create lower bound (default 0)
-			<input id="lowerBound">
-		</p>
-
-		<br><br>
-
-		<p style="font-weight: bold">Check answer in decimal:</p>
-		<button onclick="checkAnswer10()">Check Answer</button>
-		<input type="text" id="conversionInput10">
-		<p id="solutionSlot10"></p>
-
-		<br><br>
-		<p style="font-weight: bold">Check answer in hex:</p>
-		<button onclick="checkAnswerHex()">Check Answer</button>
-		<input type="text" id="conversionInputHex">
-		<p id="solutionSlotHex"></p>
-
-		<br><br>
-		<p style="font-weight: bold">Check answer in binary:</p>
-		<button onclick="checkAnswerBinary()">Check Answer</button>
-		<input type="text" id="conversionInputBinary">
-		<p id="solutionSlotBinary"></p>
-
-		<a href="truth tables.html">Link to truth tables</a>
-		<br><br>
-		<a href="speedTest.html">Link to test</a>
 	</body>
 </html>
