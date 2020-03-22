@@ -41,42 +41,45 @@
 			</div>
 		</nav>
 
-		<h1>Truth Tables</h1>
-		<p style="font-weight: bold">p: T T F F | q: T F T F</p>
+		<div class="container-fluid">
+			<h1>Truth Tables</h1>
+			<p style="font-weight: bold">p: T T F F | q: T F T F</p>
 
-		<p>To generate a table, type in the table you want created</p>
-		<p>You can use p, q, (), !, &&, and ||</p>
-		<p>You MUST put parenthesis around your truth table and DO NOT put any spaces</p>
-		<p>Valid: (p||q), (p&&(p||q)), !(p&&q)</p>
-		<p>Invalid: p||q, p || q</p>
+			<p>To generate a table, type in the table you want created</p>
+			<p>You can use p, q, (), !, &&, and ||</p>
+			<p>You MUST put parenthesis around your truth table and DO NOT put any spaces</p>
+			<p>Valid: (p||q), (p&&(p||q)), !(p&&q)</p>
+			<p>Invalid: p||q, p || q</p>
 
-		<input type="text" id="tableText">
+			<input type="text" id="tableText">
+			<br><br>
 
-		<p style="font-weight: bold">Outputs</p>
-		<p>
-			Output 1
-			<input type="text" id="test1">
-			<button type="button" class="btn btn-outline-dark" onclick="checkAnswer(0)">Check Answer</button>
-			<p id = "solutionSlot1"></p>
-		</p>
-		<p>
-			Output 2
-			<input type="text" id="test2">
-			<button type="button" class="btn btn-outline-dark" onclick="checkAnswer(1)">Check Answer</button>
-			<p id = "solutionSlot2"></p>
-		</p>
-		<p>
-			Output 3
-			<input type="text" id="test3">
-			<button type="button" class="btn btn-outline-dark" onclick="checkAnswer(2)">Check Answer</button>
-			<p id = "solutionSlot3"></p>
-		</p>
-		<p>
-			Output 4
-			<input type="text" id="test4">
-			<button type="button" class="btn btn-outline-dark" onclick="checkAnswer(3)">Check Answer</button>
-			<p id = "solutionSlot4"></p>
-		</p>
+			<p style="font-weight: bold">Outputs</p>
+			<p>
+				Output 1
+				<input type="text" id="test1">
+				<button type="button" class="btn btn-outline-dark" onclick="checkAnswer(0)">Check</button>
+				<p id = "solutionSlot1"></p>
+			</p>
+			<p>
+				Output 2
+				<input type="text" id="test2">
+				<button type="button" class="btn btn-outline-dark" onclick="checkAnswer(1)">Check</button>
+				<p id = "solutionSlot2"></p>
+			</p>
+			<p>
+				Output 3
+				<input type="text" id="test3">
+				<button type="button" class="btn btn-outline-dark" onclick="checkAnswer(2)">Check</button>
+				<p id = "solutionSlot3"></p>
+			</p>
+			<p>
+				Output 4
+				<input type="text" id="test4">
+				<button type="button" class="btn btn-outline-dark" onclick="checkAnswer(3)">Check</button>
+				<p id = "solutionSlot4"></p>
+			</p>
+		</div>
 	</body>
 
 </html>

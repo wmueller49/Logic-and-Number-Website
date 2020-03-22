@@ -41,43 +41,45 @@
 			</div>
 		</nav>
 
-		<h1>Number conversions</h1>
+		<div class="container-fluid">
+			<h1>Number conversions</h1>
 
-		<p style="font-weight: bold">Number:</p>
-		<p id="numSlot">0000</p>
+			<p style="font-weight: bold">Number:</p>
+			<p id="numSlot">0000</p>
 
-		<button type="button" class="btn btn-outline-dark" onclick="generateBinNum()">Generate Binary Number</button>
+			<button type="button" class="btn btn-outline-dark" onclick="generateBinNum()">Generate Binary Number</button>
 
-		<button type="button" class="btn btn-outline-dark" onclick="generateHexNum()">Generate Hex Number</button>
+			<button type="button" class="btn btn-outline-dark" onclick="generateHexNum()">Generate Hex Number</button>
 
-		<button type="button" class="btn btn-outline-dark" onclick="generate10Num()">Generate Decimal Number</button>
+			<button type="button" class="btn btn-outline-dark" onclick="generate10Num()">Generate Decimal Number</button>
+			<br><br>
+			<p>
+				Create upper bound (default 256)
+				<input id="upperBound">
+			</p>
+			<p>
+				Create lower bound (default 0)
+				<input id="lowerBound">
+			</p>
 
-		<p>
-			Create upper bound (default 256)
-			<input id="upperBound">
-		</p>
-		<p>
-			Create lower bound (default 0)
-			<input id="lowerBound">
-		</p>
+			<br><br>
 
-		<br><br>
+			<p style="font-weight: bold">Check answer in decimal:</p>
+			<input type="text" id="conversionInput10">
+			<button type="button" class="btn btn-outline-dark" onclick="checkAnswer10()">Check</button>
+			<p id="solutionSlot10"></p>
 
-		<p style="font-weight: bold">Check answer in decimal:</p>
-		<button type="button" class="btn btn-outline-dark" onclick="checkAnswer10()">Check Answer</button>
-		<input type="text" id="conversionInput10">
-		<p id="solutionSlot10"></p>
+			<br><br>
+			<p style="font-weight: bold">Check answer in hex:</p>
+			<input type="text" id="conversionInputHex">
+			<button type="button" class="btn btn-outline-dark" onclick="checkAnswerHex()">Check</button>
+			<p id="solutionSlotHex"></p>
 
-		<br><br>
-		<p style="font-weight: bold">Check answer in hex:</p>
-		<button type="button" class="btn btn-outline-dark" onclick="checkAnswerHex()">Check Answer</button>
-		<input type="text" id="conversionInputHex">
-		<p id="solutionSlotHex"></p>
-
-		<br><br>
-		<p style="font-weight: bold">Check answer in binary:</p>
-		<button type="button" class="btn btn-outline-dark" onclick="checkAnswerBinary()">Check Answer</button>
-		<input type="text" id="conversionInputBinary">
-		<p id="solutionSlotBinary"></p>
+			<br><br>
+			<p style="font-weight: bold">Check answer in binary:</p>
+			<input type="text" id="conversionInputBinary">
+			<button type="button" class="btn btn-outline-dark" onclick="checkAnswerBinary()">Check</button>
+			<p id="solutionSlotBinary"></p>
+		</div>
 	</body>
 </html>

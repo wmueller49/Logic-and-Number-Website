@@ -41,29 +41,32 @@
 			</div>
 		</nav>
 
-		<h1>Speed Test</h1>
-		<p id="bestTime">Best time: N/A</p>
-		<p id="timer">00:00</p>
-		<button type="button" class="btn btn-outline-dark" onclick="runClock(), test()">Start</button>
-		<button type="button" class="btn btn-outline-dark" onclick="reset()">Reset</button>
-		<br><br>
-		<p id="question"></p>
-		<input id="answer">
+		<div class="container-fluid">
+			<h1>Speed Test</h1>
+			<p id="bestTime">Best time: N/A</p>
+			<p id="timer">00:00</p>
+			<button type="button" class="btn btn-outline-dark" onclick="runClock(), test()">Start</button>
+			<button type="button" class="btn btn-outline-dark" onclick="reset()">Reset</button>
+			<br><br>
+			<p id="question"></p>
+			<input id="answer">
 
-		<script>
-			var answerInput = document.getElementById("answer");
-			if(answerInput){
-				answerInput.addEventListener("keyup", function(event){
-					if(event.keyCode === 13){
-						event.preventDefault();
-						document.getElementById("checkButton").click();
-					}
-				});
-			}
-		</script>
+			<script>
+				var answerInput = document.getElementById("answer");
+				if(answerInput){
+					answerInput.addEventListener("keyup", function(event){
+						if(event.keyCode === 13){
+							event.preventDefault();
+							document.getElementById("checkButton").click();
+						}
+					});
+				}
+			</script>
 
-		<button type="button" class="btn btn-outline-dark" id="checkButton" onclick="isCorrect()">Check</button>
-		<p id="solutionSlot"></p>
+			<button type="button" class="btn btn-outline-dark" id="checkButton" onclick="isCorrect()">Check</button>
+			<p id="solutionSlot"></p>
+
+		</div>
 	</body>
 
 
