@@ -7,20 +7,20 @@ var stringTable = [];
 function checkAnswer(i){
 	breakString();
 	var input1 = document.getElementById("test1");
-	var boolValue1 = input1.value.toLowerCase() == 'true' ? true : false;
+	var boolValue1 = (input1.value.toLowerCase() == 'true' || input1.value.toLowerCase() == 't') ? true : false;
 
 	var input2 = document.getElementById("test2");
-	var boolValue2 = input2.value.toLowerCase() == 'true' ? true : false;
+	var boolValue2 = (input2.value.toLowerCase() == 'true' || input2.value.toLowerCase() == 't') ? true : false;
 
 	var input3 = document.getElementById("test3");
-	var boolValue3 = input3.value.toLowerCase() == 'true' ? true : false;
+	var boolValue3 = (input3.value.toLowerCase() == 'true' || input3.value.toLowerCase() == 't') ? true : false;
 
 	var input4 = document.getElementById("test4");
-	var boolValue4 = input4.value.toLowerCase() == 'true' ? true : false;
+	var boolValue4 = (input4.value.toLowerCase() == 'true' || input4.value.toLowerCase() == 't') ? true : false;
 
 
 	if(i == 0 && input1 && input1.value != ''){
-		if(boolValue1 == table[i] && (input1.value == "false" || input1.value=="true")){
+		if(boolValue1 == table[i] && (input1.value.toLowerCase() == "false" || input1.value.toLowerCase() == "true" || input1.value.toLowerCase() == "t" || input1.value.toLowerCase() == "f")){
 			document.getElementById("solutionSlot1").innerHTML = "Correct! Good job!";
 		}
 		else{
@@ -29,7 +29,7 @@ function checkAnswer(i){
 	}
 
 	else if(i == 1 && input2 && input2.value != ''){
-		if(boolValue2 == table[i] && (input2.value == "false" || input2.value=="true")){
+		if(boolValue2 == table[i] && (input2.value.toLowerCase() == "false" || input2.value.toLowerCase() == "true" || input2.value.toLowerCase() == "t" || input2.value.toLowerCase() == "f")){
 			document.getElementById("solutionSlot2").innerHTML = "Correct! Good job!";
 		}
 		else{
@@ -38,7 +38,7 @@ function checkAnswer(i){
 	}
 
 	else if(i == 2 && input3 && input3.value != ''){
-		if(boolValue3 == table[i] && (input3.value == "false" || input3.value=="true")){
+		if(boolValue3 == table[i] && (input3.value.toLowerCase() == "false" || input3.value.toLowerCase() == "true" || input3.value.toLowerCase() == "t" || input3.value.toLowerCase() == "f")){
 			document.getElementById("solutionSlot3").innerHTML = "Correct! Good job!";
 		}
 		else{
@@ -47,7 +47,7 @@ function checkAnswer(i){
 	}
 
 	else if(i == 3 && input4 && input4.value != ''){
-		if(boolValue4 == table[i] && (input4.value == "false" || input4.value=="true")){
+		if(boolValue4 == table[i] && (input4.value.toLowerCase() == "false" || input4.value.toLowerCase() == "true" || input4.value.toLowerCase() == "t" || input4.value.toLowerCase() == "f")){
 			document.getElementById("solutionSlot4").innerHTML = "Correct! Good job!";
 		}
 		else{
