@@ -9,9 +9,9 @@ var answer;
 var a;
 var c;
 
-var questions = ["What is 2^0", "What is 2^1", "What is 2^2", "What is 2^3", "What is 2^4", "What is 2^5", "What is 2^6", "What is 2^7", "What is 2^8", "What is 2^9", "What is 2^10", "What is 16^2", "Put in binary: 0", "Put in binary: 1", "Put in binary: 2", "Put in binary: 3", "Put in binary: 4", "Put in binary: 5", "Put in binary: 6"," Put in binary: 7", "Put in binary: 8", "Put in binary: 9", "Put in binary: 10", "Put in binary: 11", "Put in binary: 12", "Put in binary: 13", "Put in binary: 14", "Put in binary: 15"];
+var questions = ["What is 2^0", "What is 2^1", "What is 2^2", "What is 2^3", "What is 2^4", "What is 2^5", "What is 2^6", "What is 2^7", "What is 2^8", "What is 2^9", "What is 2^10", "What is 16^2", "Put in binary: 0", "Put in binary: 1", "Put in binary: 2", "Put in binary: 3", "Put in binary: 4", "Put in binary: 5", "Put in binary: 6"," Put in binary: 7", "Put in binary: 8", "Put in binary: 9", "Put in binary: 10", "Put in binary: 11", "Put in binary: 12", "Put in binary: 13", "Put in binary: 14", "Put in binary: 15", "What is 5 / 2", "What is 10 / 3", "What is 39 / 5", "What is 36 / 7", "What is 74 / 9", "What is 8 % 0", "What is 37 % 1", "What is 9 % 2", "What is 7 % 4", "What is 23 % 6", "What is 32 % 8", "What is 54 % 9", "What is 37 % 10"];
 var copyQuestions = [];
-var answers = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 256, 0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111];
+var answers = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 256, 0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111, 2, 3, 7, 5, 8, 8, 0, 1, 3, 5, 0, 0, 7];
 var copyAnswers = [];
 var index = 0;
 
